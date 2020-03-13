@@ -11,7 +11,7 @@ In order to create a new container image release the following steps have to be 
 
 ### Building the container image
 
-    docker build -t smpl-go-web .
+    docker image build -t smpl-go-web .
 
 ### Tagging the image locally
 
@@ -23,13 +23,13 @@ Then login:
 
 Please replace the version 1.0.0 with your new version.
 
-    docker tag smpl-go-web fischerjulian/smpl-go-web:1.0.0
+    docker image tag smpl-go-web fischerjulian/smpl-go-web:1.0.0
 
 ### Upload the locally tagged image to the default registry
 
 Please replace the version 1.0.0 with your new version.
 
-    docker push fischerjulian/smpl-go-web:1.0.0
+    docker image push fischerjulian/smpl-go-web:1.0.0
 
 ## Run the Container Image Locally
 
@@ -37,17 +37,17 @@ Please replace the version 1.0.0 with your new version.
 
 Assuming you have built the container image locally the container can be run with docker:
 
-    docker run -p 8080:8080 smpl-go-web
+    docker container run -p 8080:8080 smpl-go-web
 
 This maps the container port 8080 to your local port 8080 so ensure the port is available.
 
 In order to stop the container obtain its ID by using
 
-    docker ps
+    docker container ls
 
 And then
 
-  docker delete 780037d0b7e3
+  docker container delete 780037d0b7e3
 
 Where `780037d0b7e3` is to be replaced with the corresponding ID of your container.
 
@@ -55,13 +55,13 @@ Where `780037d0b7e3` is to be replaced with the corresponding ID of your contain
 
 Instead of building a local version you can also pull a remote image with the specified tag:
 
-    docker pull fischerjulian/smpl-go-web:1.0.0
+    docker image pull fischerjulian/smpl-go-web:1.0.0
 
 A quick look will show which images are locally available.
 
-    docker images
+    docker image ls
 
 These are the images you can use locally. So for the remote image we've downloaded to our
 local computer this may look like this:
 
-    docker run -p 8080:8080 fischerjulian/smpl-go-web:1.0.0
+    docker container run -p 8080:8080 fischerjulian/smpl-go-web:1.0.0
