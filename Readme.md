@@ -47,7 +47,7 @@ In order to stop the container obtain its ID by using
 
 And then
 
-  docker delete 780037d0b7e3
+    docker delete 780037d0b7e3
 
 Where `780037d0b7e3` is to be replaced with the corresponding ID of your container.
 
@@ -64,4 +64,4 @@ A quick look will show which images are locally available.
 These are the images you can use locally. So for the remote image we've downloaded to our
 local computer this may look like this:
 
-    docker run -p 8080:8080 fischerjulian/smpl-go-web:1.0.0
+    docker run -it -p 8080:8080 fischerjulian/smpl-go-web:1.0.0
